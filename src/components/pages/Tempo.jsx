@@ -12,9 +12,7 @@ function Tempo() {
       
       <HeroSection/>
       <VehicleDetails/>
-
       <Pricing/>
-     {/* <TravelLocations/> */}
      <TempoFeature/>
 
     </div>

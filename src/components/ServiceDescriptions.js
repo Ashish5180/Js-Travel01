@@ -9,9 +9,9 @@ const ServiceDescriptions = () => {
   ];
 
   return (
-    <section className="bg-white py-8">
+    <section className=" py-8">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-blue-600 mb-8">Our Services</h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-blue-50 p-6 rounded-lg shadow-lg">

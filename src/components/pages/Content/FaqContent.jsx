@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
-import { FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Importing React Icons
+import { FaAngleDown, FaAngleUp, FaQuestionCircle } from 'react-icons/fa'; // Updated icons
 import { motion } from 'framer-motion';
 
 function FaqContent() {
-
-  const [activeIndex, setActiveIndex] = useState(null); 
-  // State to track which FAQ is active
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const handleToggle = (index) => {
-    // Toggle the active index
     if (activeIndex === index) {
-      setActiveIndex(null); // If it's already open, close it
+      setActiveIndex(null); // Close if the same FAQ is clicked again
     } else {
-      setActiveIndex(index); // Open the selected FAQ
+      setActiveIndex(index); // Open the clicked FAQ
     }
   };
 
@@ -44,61 +41,66 @@ function FaqContent() {
   ];
 
   return (
-    <div className="w-screen px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto bg-white text-gray-900">
-      <div className="grid md:grid-cols-5 gap-10">
-        {/* Left Column (Title) */}
-        <div className="md:col-span-2">
-          <div className="max-w-xs">
-            <h2 className="text-3xl font-bold md:text-4xl md:leading-tight">
-              Frequently
-              <br />
-              Asked Questions
-            </h2>
-            <p className="mt-1 hidden md:block text-gray-400">
-              Find answers to the most frequently asked questions.
-            </p>
-          </div>
+    <div className="w-full px-6 py-10 bg-white text-gray-900">
+      <div className="max-w-7xl mx-auto">
+        {/* Title Section */}
+        <div className="text-center mb-12">
+          <motion.h2
+            className="text-4xl font-extrabold mb-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            Frequently Asked Questions
+          </motion.h2>
+          <p className="text-lg text-gray-600">Find quick answers to your common queries!</p>
         </div>
 
-        {/* Right Column (FAQ Accordion) */}
-        
-        <div className="md:col-span-3">
-          <div className="hs-accordion-group divide-y divide-gray-700 text-black">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                className="hs-accordion pt-6 pb-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
+        {/* FAQ Accordion Section */}
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              className={`border border-gray-300 rounded-lg overflow-hidden ${activeIndex === index ? 'shadow-lg' : ''}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* FAQ Button */}
+              <button
+                className="w-full px-6 py-4 flex justify-between items-center text-left font-semibold text-lg bg-white hover:bg-gray-100 rounded-t-lg transition duration-300 ease-in-out"
+                onClick={() => handleToggle(index)} // Toggle the FAQ
               >
-                <button
-                  onClick={() => handleToggle(index)} // Toggle the clicked FAQ
-                  className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-black rounded-lg transition hover:text-gray-300 focus:outline-none focus:text-gray-300"
-                  aria-expanded={activeIndex === index} // Control aria-expanded based on the active index
-                >
-                  {faq.question}
-                  <span className="hs-accordion-active:hidden block shrink-0 text-gray-600 group-hover:text-gray-300">
-                    <FaAngleDown />
-                  </span>
-                  <span className="hs-accordion-active:block hidden shrink-0 text-gray-600 group-hover:text-gray-300">
-                    <FaAngleUp />
-                  </span>
-                </button>
+                <div className="flex items-center space-x-3">
+                  <FaQuestionCircle className="text-xl text-teal-600" />
+                  <span>{faq.question}</span>
+                </div>
+                <div>
+                  {activeIndex === index ? (
+                    <FaAngleUp className="text-lg text-teal-600" />
+                  ) : (
+                    <FaAngleDown className="text-lg text-teal-600" />
+                  )}
+                </div>
+              </button>
 
-                <motion.div
-                  initial={{ height: 0 }}
-                  animate={{ height: activeIndex === index ? 'auto' : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="hs-accordion-content overflow-hidden transition-[height] duration-300"
-                  role="region"
-                  aria-labelledby={`hs-basic-with-title-and-arrow-stretched-heading-${index}`}
-                >
-                  <p className="text-gray-400">{faq.answer}</p>
-                </motion.div>
+              {/* FAQ Content */}
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{
+                  height: activeIndex === index ? 'auto' : 0,
+                  opacity: activeIndex === index ? 1 : 0,
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: 'easeInOut',
+                }}
+                className="overflow-hidden bg-gray-50 px-6 py-4"
+              >
+                <p className="text-gray-700">{faq.answer}</p>
               </motion.div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

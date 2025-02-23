@@ -1,4 +1,5 @@
 import React from "react";
+import ServiceDescriptions from "./ServiceDescriptions";
 
 const PricingTable = () => {
   const pricing = [
@@ -33,6 +34,7 @@ const PricingTable = () => {
           </tbody>
         </table>
       </div>
+      <ServiceDescriptions/>
     </section>
   );
 };

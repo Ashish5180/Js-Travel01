@@ -83,9 +83,9 @@ const Hero = () => {
           transition={{ duration: 1, delay: 1.5 }}
         >
           <img 
-            src="./images/cab.png" 
+            src="./images/hero.jpg" 
             alt="Eco-Friendly Car" 
-            className="w-72 md:w-96 drop-shadow-xl animate-pulse"
+            className="w-72 md:w-96 drop-shadow-xl  rounded-xl"
           />
         </motion.div>
       </div>

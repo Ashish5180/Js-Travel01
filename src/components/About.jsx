@@ -16,13 +16,13 @@ function About() {
               >
                 <img
                   className="rounded-xl object-cover"
-                  src="https://yourwebsite.com/path/to/your-cab-image1.jpg"
+                  src="./images/map.jpg"
                   alt="Cab Service"
                 />
               </motion.div>
               <motion.img
                 className="sm:ml-0 ml-auto rounded-xl object-cover"
-                src="https://yourwebsite.com/path/to/your-cab-image2.jpg"
+                src="./images/hero2.jpg"
                 alt="Cab Service"
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}

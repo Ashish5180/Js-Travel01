@@ -1,145 +1,123 @@
 import React from 'react';
-import { FaStream } from 'react-icons/fa'; 
-import { HiOutlineMenu } from 'react-icons/hi'; 
-import { IoIosArrowForward } from 'react-icons/io'; 
+import { FaTaxi, FaMapMarkerAlt ,FaArrowRight} from 'react-icons/fa';
+import { HiOutlineMenu } from 'react-icons/hi';
+import { IoIosArrowForward } from 'react-icons/io';
 import { motion } from 'framer-motion';
 
 function FaqHero() {
   return (
-    <div>
-      <div className="relative mx-auto flex flex-col px-6  w-screen md:h-screen  md:flex-row bg-gradient-to-r from-indigo-700 to-indigo-400 py-10">
-        
-        {/* Left Column */}
-        <div className="mx-auto mt-10 w-full max-w-xl md:mt-36 lg:max-w-screen-xl">
-          <motion.div 
-            className="mb-16 lg:mb-0 lg:max-w-lg"
+    <div className="relative w-full bg-gradient-to-r from-indigo-600 to-purple-600 py-16">
+      {/* Main Layout */}
+      <div className="container mx-auto px-6 lg:px-16">
+        {/* Section 1: Left side with interactive features */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
+          {/* Left Column */}
+          <motion.div
+            className="md:w-1/2 text-center md:text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
           >
-            <div className="mb-6 max-w-xl">
-              <div>
-                <p className="bg-teal-500 mb-4 inline-block rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white">INTRODUCING</p>
-              </div>
-              <h2 className="mb-6 max-w-lg font-sans text-4xl font-bold tracking-tight text-white sm:text-5xl sm:leading-snug">
-                An inspiring <br />
-                new future for
-                <span className="inline-block text-yellow-300"> Web 3.0</span>
-              </h2>
-              <p className="text-base text-gray-200 md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ullam rem voluptatem, animi tempora expedita! Lorem ipsum dolor sit amet consectetur.</p>
-            </div>
-            <div className="flex items-center mt-8">
-              <a href="/" className="mr-6 inline-flex h-14 items-center justify-center rounded bg-yellow-500 px-6 font-medium text-white shadow-lg hover:bg-yellow-400 transition-all duration-300 ease-in-out">
-                Get Started
-              </a>
-              <a href="/" aria-label="" className="inline-flex items-center font-semibold text-white hover:text-yellow-300 transition-colors duration-300 ease-in-out">
-                Learn more
-                <IoIosArrowForward className="ml-2 text-lg" />
-              </a>
+            <p className="text-lg text-white font-semibold">Your Trusted Travel Partner in</p>
+            <h2 className="text-4xl md:text-5xl text-white font-bold mt-4">
+              Explore Delhi NCR with Our <span className="text-yellow-300">Reliable Cabs</span> and Tours
+            </h2>
+            <p className="text-lg text-gray-200 mt-4">
+              Whether you're traveling for business or leisure, we offer the best cab services and custom travel packages for all your needs in Delhi NCR.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="mt-8 flex justify-center md:justify-start space-x-6">
+              <motion.a
+                href="/"
+                className="inline-flex items-center px-8 py-3 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-400 transition-all duration-300 ease-in-out"
+                whileHover={{ scale: 1.05 }}
+              >
+                Book a Cab
+                <IoIosArrowForward className="ml-2" />
+              </motion.a>
+              <motion.a
+                href="/"
+                className="inline-flex items-center text-white font-semibold hover:text-yellow-300 transition-colors duration-300 ease-in-out"
+              >
+                Explore Packages
+                <FaArrowRight className="ml-2" />
+              </motion.a>
             </div>
           </motion.div>
+
+          {/* Right Column: Interactive Content */}
+          <div className="md:w-1/2 flex justify-center">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
+            >
+              <div className="w-96 h-96 bg-indigo-700 rounded-full shadow-lg flex items-center justify-center transform rotate-45">
+                <div className="w-64 h-64 bg-white rounded-lg shadow-xl flex items-center justify-center">
+                  <p className="text-2xl text-indigo-700 font-semibold">Discover Delhi NCR</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-        
-        {/* Right Column */}
-        <div className="xl:1/2 flex h-full w-full justify-end space-x-4 overflow-hidden px-6 lg:w-2/3">
-          
-          {/* Col 1 */}
-          <div className="flex flex-col space-y-6 md:w-72">
-            <div className="-mt-5 hidden h-40 flex-shrink-0 rounded-xl bg-indigo-100 md:block"></div>
-            <motion.div 
-              className="relative rounded-xl bg-white p-6 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-            >
-              <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis aliquam vero illo fuga libero nihil quisquam, aspernatur sint.</p>
-              <div className="mt-4 flex items-center">
-                <a href="#" className="relative block">
-                  <img alt="" src="/images/Bm8G0V9ytRbCalT-KOSMT.png" className="mx-auto h-12 w-12 rounded-full object-cover" />
-                </a>
-                <div className="ml-3 flex flex-col justify-between">
-                  <span className="text-sm font-semibold text-indigo-600">Simon Lewis</span>
-                  <span className="flex items-center text-xs text-gray-500">Head of marketing at Resnet</span>
-                </div>
-              </div>
-            </motion.div>
 
-            <motion.div 
-              className="relative rounded-xl bg-indigo-600 p-6 shadow-lg text-white"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-            >
-              <div className="absolute -left-2 top-0 -z-10 h-6 w-6 skew-x-[28deg] bg-indigo-600"></div>
-              <p className="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam ratione atque officia. Lorem ipsum dolor sit amet consectetur.</p>
-              <div className="mt-4 flex items-center">
-                <a href="#" className="relative block">
-                  <img alt="" src="/images/y9s3xOJV6rnQPKIrdPYJy.png" className="mx-auto h-12 w-12 rounded-full object-cover" />
-                </a>
-                <div className="ml-3 flex flex-col justify-between">
-                  <span className="text-sm font-semibold">Simon Lewis</span>
-                  <span className="flex items-center text-xs">Head of marketing at Resnet</span>
-                </div>
+        {/* Section 2: FAQ Cards with Hover Effects */}
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Card 1 */}
+          <motion.div
+            className="bg-white rounded-lg shadow-lg p-6 hover:scale-105 transform transition-all duration-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2 }}
+          >
+            <div className="flex items-center space-x-4">
+              <FaTaxi className="text-3xl text-indigo-600" />
+              <div>
+                <h3 className="text-xl font-semibold text-indigo-700">What types of cabs do you offer?</h3>
+                <p className="text-gray-600 mt-2">
+                  We provide a range of vehicles for your convenience, including sedans, SUVs, and premium cars for airport transfers, local rides, and outstation trips.
+                </p>
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
 
-            <motion.div 
-              className="relative rounded-xl bg-white p-6 shadow-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-            >
-              <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis aliquam vero illo fuga libero nihil quisquam, aspernatur sint.</p>
-              <div className="mt-4 flex items-center">
-                <a href="#" className="relative block">
-                  <img alt="" src="/images/x4vs_ucCRWYTU_yLQ6h26.png" className="mx-auto h-12 w-12 rounded-full object-cover" />
-                </a>
-                <div className="ml-3 flex flex-col justify-between">
-                  <span className="text-sm font-semibold text-indigo-600">Simon Lewis</span>
-                  <span className="flex items-center text-xs text-gray-500">Head of marketing at Resnet</span>
-                </div>
+          {/* Card 2 */}
+          <motion.div
+            className="bg-white rounded-lg shadow-lg p-6 hover:scale-105 transform transition-all duration-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2 }}
+          >
+            <div className="flex items-center space-x-4">
+              <HiOutlineMenu className="text-3xl text-indigo-600" />
+              <div>
+                <h3 className="text-xl font-semibold text-indigo-700">How can I book a ride?</h3>
+                <p className="text-gray-600 mt-2">
+                  You can book a ride via our website or mobile app. Choose the car type, pick-up location, and desired time, and you're all set to go!
+                </p>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
-          {/* Col 2 */}
-          <div className="hidden w-72 flex-col space-y-6 lg:flex">
-            <div className="-mt-10 hidden h-40 flex-shrink-0 rounded-xl bg-indigo-100 md:block"></div>
-            <motion.div 
-              className="relative rounded-xl bg-white p-6 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-            >
-              <p className="text-sm text-gray-600">Elit. Facilis aliquam vero illo fuga libero nihil quisquam, aspernatur sint.</p>
-              <div className="mt-4 flex items-center">
-                <a href="#" className="relative block">
-                  <img alt="" src="/images/oPf2b7fqx5xa3mo68dYHo.png" className="mx-auto h-12 w-12 rounded-full object-cover" />
-                </a>
-                <div className="ml-3 flex flex-col justify-between">
-                  <span className="text-sm font-semibold text-indigo-600">Simon Lewis</span>
-                  <span className="flex items-center text-xs text-gray-500">Head of marketing at Resnet</span>
-                </div>
+          {/* Card 3 */}
+          <motion.div
+            className="bg-white rounded-lg shadow-lg p-6 hover:scale-105 transform transition-all duration-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2 }}
+          >
+            <div className="flex items-center space-x-4">
+              <FaMapMarkerAlt className="text-3xl text-indigo-600" />
+              <div>
+                <h3 className="text-xl font-semibold text-indigo-700">What travel packages do you offer?</h3>
+                <p className="text-gray-600 mt-2">
+                  We offer custom travel packages for Delhi, Agra, Jaipur, and other nearby destinations. Whether it's a day trip or a week-long vacation, we’ve got you covered!
+                </p>
               </div>
-            </motion.div>
-            <motion.div 
-              className="relative rounded-xl bg-white p-6 shadow-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
-            >
-              <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis aliquam vero illo fuga libero nihil quisquam, aspernatur sint.</p>
-              <div className="mt-4 flex items-center">
-                <a href="#" className="relative block">
-                  <img alt="" src="/images/-ytzjgg6lxK1ICPcNfXho.png" className="mx-auto h-12 w-12 rounded-full object-cover" />
-                </a>
-                <div className="ml-3 flex flex-col justify-between">
-                  <span className="text-sm font-semibold text-indigo-600">Simon Lewis</span>
-                  <span className="flex items-center text-xs text-gray-500">Head of marketing at Resnet</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

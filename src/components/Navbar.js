@@ -17,7 +17,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-lg text-white">
           <li><Link to="/" className="hover:text-green-200 transition">Home</Link></li>
-          <li><Link to="/tempo-traveller" className="hover:text-green-200 transition">Tempo Traveller</Link></li>
+          <li><Link to="/tempo-traveller" className="hover:text-green-200 transition">Our Cabs</Link></li>
           <li><Link to="/corporate" className="hover:text-green-200 transition">Corporate</Link></li>
           <li><Link to="/faqs" className="hover:text-green-200 transition">FAQs</Link></li>
           <li><Link to="/contact" className="hover:text-green-200 transition">Contact Us</Link></li>
