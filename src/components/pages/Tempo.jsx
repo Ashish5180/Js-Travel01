@@ -8,6 +8,7 @@ import Footer from '../Footer'
 import Navbar from '../Navbar'
 import TravelServices from './Content/TravelServices'
 import WhyChooseUs from './Content/WhyUs'
+import TravelLocationsMap from './Content/LoactionMap'
 
 
 
@@ -19,6 +20,7 @@ function Tempo() {
       <HeroSection/>
       <TravelServices/>
       <VehicleDetails/>
+      <TravelLocationsMap/>
       <Pricing/>
       <WhyChooseUs/>
      <TempoFeature/>
